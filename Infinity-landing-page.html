@@ -8,11 +8,39 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black:       #0a0a0a;
-      --deep:        #0d0d0d;
-      --card:        #141414;
-      --card2:       #111111;
+    :root{
+
+    /* Main Brand Colors */
+    --primary:        #1F961A;
+    --primary-dark:   #157811;
+    --primary-light:  #4CAF50;
+
+    --gold:           #D5AE5B;
+    --gold-dark:      #AD8E4C;
+    --gold-light:     #E8C57A;
+
+    /* Neutral Colors */
+    --white:          #FFFFFF;
+    --off-white:      #F7F7F5;
+    --light-bg:       #FAFAF8;
+
+    --text:           #2C2C2C;
+    --text-light:     #666666;
+
+    /* Backgrounds */
+    --background:     #FFFFFF;
+    --section:        #F8F9F7;
+    --card:           #FFFFFF;
+
+    /* Borders */
+    --border:         rgba(31,150,26,.12);
+    --border-gold:    rgba(213,174,91,.20);
+
+    /* Shadows */
+    --shadow:         0 15px 40px rgba(0,0,0,.08);
+    --shadow-lg:      0 25px 60px rgba(0,0,0,.12);
+
+}
 
       /* Juneteenth palette */
       --red:         #BF1A2F;
@@ -35,35 +63,39 @@
       --border-green: rgba(38,169,32,0.25);
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    min-height: 100vh;
+    html{
+    scroll-behavior:smooth;
 }
 
-html,
-body {
-    background: #0a0a0a !important;
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
 }
 
-    /* ── JUNETEENTH STAR BURST SVG BG ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(191,26,47,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 100% 50%, rgba(38,169,32,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 0% 80%, rgba(201,168,76,0.07) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    body > * { position: relative; z-index: 1; }
+    body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(31,150,26,.10),
+            transparent 40%),
+
+        radial-gradient(circle at bottom left,
+            rgba(213,174,91,.10),
+            transparent 35%),
+
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #FAFAF8 100%
+        );
+}
 
     /* ── NAV ── */
     nav {
