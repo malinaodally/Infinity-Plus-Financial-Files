@@ -113,30 +113,34 @@ body{
     }
     .nav-flag { font-size: 1rem; }
     .nav-cta {
-      padding: 9px 20px;
-      background: linear-gradient(135deg, var(--red-deep), var(--red), var(--red-bright));
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; }
+  padding: 9px 20px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
 
-    /* ── JUNETEENTH BANNER ── */
-    .juneteenth-banner {
-      background: linear-gradient(135deg, var(--red-deep) 0%, #6b0015 40%, #0d3a0a 60%, var(--green-dark) 100%);
-      border-bottom: 2px solid var(--gold);
-      padding: 12px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+.nav-cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* TOP BRAND BANNER */
+.juneteenth-banner {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--gold) 100%);
+  border-bottom: 2px solid var(--gold);
+  padding: 12px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
     .juneteenth-banner::before {
       content: '✦ ✦ ✦';
       position: absolute;
