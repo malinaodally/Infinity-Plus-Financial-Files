@@ -353,38 +353,51 @@ main{
         var(--gold)
     );
 }
-    /* Juneteenth tri-color top bar */
-    .mockup-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg,
-        var(--red-deep) 0%,
-        var(--red) 20%,
-        var(--red-bright) 33%,
-        var(--gold-dark) 33%,
+   /* Premium Top Accent */
+
+.mockup-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary) 0%,
         var(--gold) 50%,
-        var(--gold-light) 66%,
-        var(--green-deep) 66%,
-        var(--green) 80%,
-        var(--green-bright) 100%
-      );
-    }
-    .mockup-star {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      font-size: 1.4rem;
-      opacity: 0.25;
-    }
-    .glow-red {
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 150px; height: 150px;
-      background: radial-gradient(circle, rgba(191,26,47,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
+        var(--primary-dark) 100%
+    );
+}
+    .mockup-star{
+    position:absolute;
+    top:20px;
+    right:24px;
+
+    font-size:1.4rem;
+    color:var(--gold);
+
+    opacity:.18;
+}
+    .glow-green{
+    position:absolute;
+    top:-40px;
+    right:-40px;
+
+    width:180px;
+    height:180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(31,150,26,.12) 0%,
+            rgba(213,174,91,.08) 45%,
+            transparent 75%
+        );
+
+    pointer-events:none;
+}
     .glow-green {
       position: absolute;
       bottom: -30px; left: -30px;
