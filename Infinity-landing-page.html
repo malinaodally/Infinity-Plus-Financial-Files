@@ -249,40 +249,71 @@ main{
     line-height:1.8;
 }
 
-    /* ── JUNETEENTH COLOR STRIPE ── */
-    .stripe {
-      display: flex;
-      height: 4px;
-      border-radius: 2px;
-      overflow: hidden;
-      max-width: 200px;
-      margin: 0 auto 48px;
-    }
-    .stripe-r { flex: 1; background: var(--red); }
-    .stripe-g { flex: 1; background: var(--gold); }
-    .stripe-gr { flex: 1; background: var(--green); }
+    /* ===== ACCENT STRIPE ===== */
 
-    /* ── BADGES ── */
-    .badges {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 58px;
-    }
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .badge-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    .bd-red   { background: var(--red); }
-    .bd-gold  { background: var(--gold); }
-    .bd-green { background: var(--green); }
+.stripe{
+    display:flex;
+    height:4px;
+    border-radius:2px;
+    overflow:hidden;
+    max-width:220px;
+    margin:0 auto 48px;
+}
 
+.stripe-r{
+    flex:1;
+    background:var(--primary-dark);
+}
+
+.stripe-g{
+    flex:1;
+    background:var(--gold);
+}
+
+.stripe-gr{
+    flex:1;
+    background:var(--primary);
+}
+
+/* ===== BADGES ===== */
+
+.badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:58px;
+}
+
+.badge{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:.78rem;
+    font-weight:600;
+
+    color:var(--text-light);
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+.bd-red{
+    background:var(--primary-dark);
+}
+
+.bd-gold{
+    background:var(--gold);
+}
+
+.bd-green{
+    background:var(--primary);
+}
     /* ── MOCKUP ── */
     .guide-mockup {
       max-width: 460px;
