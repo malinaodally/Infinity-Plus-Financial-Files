@@ -440,33 +440,50 @@ main{
     flex-direction:column;
     gap:11px;
 }
-    .mockup-items li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .mockup-items li .chk {
-      font-weight: 800;
-      font-size: 0.82rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .chk-r { color: var(--red-bright); }
-    .chk-g { color: var(--gold-light); }
-    .chk-gr { color: var(--green-bright); }
+    .mockup-items li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
 
-    /* ── TRI DIVIDER ── */
-    .tri-divider {
-      height: 3px;
-      background: linear-gradient(90deg,
-        var(--red-deep), var(--red), var(--red-bright),
-        var(--gold-dark), var(--gold), var(--gold-light),
-        var(--green-deep), var(--green), var(--green-bright)
-      );
-    }
+    font-size:.83rem;
+    color:var(--text-light);
+
+    line-height:1.6;
+}
+
+.mockup-items li .chk{
+    font-weight:800;
+    font-size:.82rem;
+    flex-shrink:0;
+    margin-top:1px;
+}
+
+/* Check Icon Colors */
+
+.chk-r{
+    color:var(--primary);
+}
+
+.chk-g{
+    color:var(--gold);
+}
+
+.chk-gr{
+    color:var(--primary-dark);
+}
+
+/* ===== Divider ===== */
+
+.tri-divider{
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary-dark),
+        var(--primary),
+        var(--gold)
+    );
+}
 
     /* ── FORM ── */
     .form-section {
