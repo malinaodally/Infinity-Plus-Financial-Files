@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Into Credit | Free Personal Info Cleanup Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:       #0a0a0a;
+      --deep:        #0d0d0d;
+      --card:        #141414;
+      --card2:       #111111;
+
+      /* Juneteenth palette */
+      --red:         #BF1A2F;
+      --red-deep:    #8C0F20;
+      --red-bright:  #E8203A;
+      --gold:        #C9A84C;
+      --gold-light:  #F0C060;
+      --gold-dark:   #8a6f30;
+      --green:       #26A920;
+      --green-bright:#2ec424;
+      --green-deep:  #157811;
+      --green-dark:  #0d5a0a;
+
+      --white:       #f5f5f0;
+      --cream:       #f0ead8;
+      --muted:       #888880;
+
+      --border-gold:  rgba(201,168,76,0.22);
+      --border-red:   rgba(191,26,47,0.3);
+      --border-green: rgba(38,169,32,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+html,
+body {
+    background: #0a0a0a !important;
+}
+
+    /* ── JUNETEENTH STAR BURST SVG BG ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(191,26,47,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 100% 50%, rgba(38,169,32,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 0% 80%, rgba(201,168,76,0.07) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body > * { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: rgba(10,10,10,0.96);
+      border-bottom: 1px solid var(--border-gold);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.75;
+    }
+    .nav-flag { font-size: 1rem; }
+    .nav-cta {
+      padding: 9px 20px;
+      background: linear-gradient(135deg, var(--red-deep), var(--red), var(--red-bright));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── JUNETEENTH BANNER ── */
+    .juneteenth-banner {
+      background: linear-gradient(135deg, var(--red-deep) 0%, #6b0015 40%, #0d3a0a 60%, var(--green-dark) 100%);
+      border-bottom: 2px solid var(--gold);
+      padding: 12px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .juneteenth-banner::before {
+      content: '✦ ✦ ✦';
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      opacity: 0.6;
+    }
+    .juneteenth-banner::after {
+      content: '✦ ✦ ✦';
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      opacity: 0.6;
+    }
+    .banner-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .banner-text span { color: var(--cream); opacity: 0.85; font-weight: 400; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px 64px;
+      text-align: center;
+      background: #0a0a0a !important;
+    }
+    .hero-section,
+main {
+    background: #0a0a0a !important;
+}
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(201,168,76,0.07);
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .hero-sub-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--red-bright), var(--gold-light), var(--green-bright));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    /* ── JUNETEENTH COLOR STRIPE ── */
+    .stripe {
+      display: flex;
+      height: 4px;
+      border-radius: 2px;
+      overflow: hidden;
+      max-width: 200px;
+      margin: 0 auto 48px;
+    }
+    .stripe-r { flex: 1; background: var(--red); }
+    .stripe-g { flex: 1; background: var(--gold); }
+    .stripe-gr { flex: 1; background: var(--green); }
+
+    /* ── BADGES ── */
+    .badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 58px;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .bd-red   { background: var(--red); }
+    .bd-gold  { background: var(--gold); }
+    .bd-green { background: var(--green); }
+
+    /* ── MOCKUP ── */
+    .guide-mockup {
+      max-width: 460px;
+      margin: 0 auto 68px;
+    }
+    .mockup-card {
+      background: linear-gradient(150deg, #1a0508 0%, #120d02 40%, #061508 100%);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 18px;
+      padding: 38px 34px;
+      text-align: left;
+      box-shadow:
+        0 40px 100px rgba(0,0,0,0.75),
+        inset 0 1px 0 rgba(201,168,76,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Juneteenth tri-color top bar */
+    .mockup-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        var(--red-deep) 0%,
+        var(--red) 20%,
+        var(--red-bright) 33%,
+        var(--gold-dark) 33%,
+        var(--gold) 50%,
+        var(--gold-light) 66%,
+        var(--green-deep) 66%,
+        var(--green) 80%,
+        var(--green-bright) 100%
+      );
+    }
+    .mockup-star {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 1.4rem;
+      opacity: 0.25;
+    }
+    .glow-red {
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 150px; height: 150px;
+      background: radial-gradient(circle, rgba(191,26,47,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .glow-green {
+      position: absolute;
+      bottom: -30px; left: -30px;
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, rgba(38,169,32,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .mockup-label {
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .mockup-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 22px;
+    }
+    .mockup-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .mockup-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .mockup-items li .chk {
+      font-weight: 800;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .chk-r { color: var(--red-bright); }
+    .chk-g { color: var(--gold-light); }
+    .chk-gr { color: var(--green-bright); }
+
+    /* ── TRI DIVIDER ── */
+    .tri-divider {
+      height: 3px;
+      background: linear-gradient(90deg,
+        var(--red-deep), var(--red), var(--red-bright),
+        var(--gold-dark), var(--gold), var(--gold-light),
+        var(--green-deep), var(--green), var(--green-bright)
+      );
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--deep);
+      padding: 76px 24px;
+    }
+    .form-wrap {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .form-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .form-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+    .field-group label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+    .field-group input {
+      background: #0c0c0c;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      padding: 15px 16px;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .field-group input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    }
+    .field-group input::placeholder { color: #3a3a3a; }
+
+    .cta-btn {
+      width: 100%;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 40%, var(--gold-dark) 70%, var(--gold) 100%);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.1));
+      pointer-events: none;
+    }
+    .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-btn:active { transform: translateY(0); }
+
+    .form-disclaimer {
+      font-size: 0.7rem;
+      color: #444;
+      margin-top: 14px;
+      line-height: 1.65;
+    }
+
+    .success-msg {
+      display: none;
+      background: linear-gradient(135deg, #1a0306, #060f05);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 14px;
+      padding: 36px 28px;
+      text-align: center;
+
+      max-width: 1000px;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .success-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+    .success-msg h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .success-msg p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .community-btn-outline {
+      display: inline-block;
+      padding: 13px 30px;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 18px;
+      display: inline-block;
+    }
+    .community-btn-outline:hover { background: var(--gold); color: var(--black); }
+
+    /* ── WHAT'S INSIDE ── */
+    .what-section {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 84px 24px;
+    background: #0a0a0a !important;
+}
+    .section-label {
+      font-size: 0.66rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .sl-gold  { color: var(--gold); }
+    .sl-red   { color: var(--red-bright); }
+    .sl-green { color: var(--green-bright); }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 52px;
+      line-height: 1.2;
+    }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+    .perk-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 30px 24px;
+      transition: transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .perk-card.pc-r { border: 1px solid rgba(191,26,47,0.3); }
+    .perk-card.pc-g { border: 1px solid var(--border-gold); }
+    .perk-card.pc-gr { border: 1px solid var(--border-green); }
+    .perk-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .perk-card.pc-r::before { background: linear-gradient(90deg, var(--red-deep), var(--red-bright)); }
+    .perk-card.pc-g::before  { background: linear-gradient(90deg, var(--gold-dark), var(--gold-light)); }
+    .perk-card.pc-gr::before { background: linear-gradient(90deg, var(--green-deep), var(--green-bright)); }
+    .perk-card:hover { transform: translateY(-3px); }
+
+    .perk-icon { font-size: 1.7rem; margin-bottom: 14px; display: block; }
+    .perk-name { font-weight: 700; font-size: 0.93rem; color: var(--white); margin-bottom: 7px; }
+    .perk-desc { font-size: 0.81rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── PROOF ── */
+    .proof-section {
+      background: var(--card2);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 76px 24px;
+    }
+    .proof-wrap { max-width: 820px; margin: 0 auto; }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 20px;
+      margin-top: 46px;
+    }
+    .proof-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 26px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .proof-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .proof-card:nth-child(1)::before { background: linear-gradient(90deg, var(--red-deep), var(--red)); border: 1px solid rgba(191,26,47,0.25); }
+    .proof-card:nth-child(2)::before { background: linear-gradient(90deg, var(--gold-dark), var(--gold-light)); border: 1px solid var(--border-gold); }
+    .proof-card:nth-child(3)::before { background: linear-gradient(90deg, var(--green-deep), var(--green-bright)); border: 1px solid var(--border-green); }
+    .proof-card:nth-child(1) { border: 1px solid rgba(191,26,47,0.2); }
+    .proof-card:nth-child(2) { border: 1px solid var(--border-gold); }
+    .proof-card:nth-child(3) { border: 1px solid var(--border-green); }
+
+    .proof-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .proof-text { font-size: 0.87rem; color: var(--muted); line-height: 1.72; margin-bottom: 18px; }
+    .proof-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; }
+    .proof-card:nth-child(1) .proof-name { color: var(--red-bright); }
+    .proof-card:nth-child(2) .proof-name { color: var(--gold); }
+    .proof-card:nth-child(3) .proof-name { color: var(--green-bright); }
+
+    /* ── FREEDOM STATEMENT ── */
+    .freedom-section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .freedom-icon {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .freedom-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .freedom-section p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .community-btn {
+      display: inline-block;
+      padding: 18px 44px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green), var(--green-bright));
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .community-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.12));
+      pointer-events: none;
+    }
+    .community-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--red), var(--gold), var(--green)) 1;
+      padding: 28px 24px;
+      text-align: center;
+      background: var(--deep);
+    }
+    footer p { font-size: 0.72rem; color: #3a3a3a; }
+    footer a { color: var(--gold-dark); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 16px; }
+      .nav-badge { display: none; }
+      .hero { padding: 56px 20px 44px; }
+      .what-section, .freedom-section { padding: 60px 20px; }
+      .form-section { padding: 56px 20px; }
+    }
+    @media (max-width: 600px) {
+    nav { padding: 14px 16px; }
+    .nav-badge { display: none; }
+    .hero { padding: 56px 20px 44px; }
+    .what-section, .freedom-section { padding: 60px 20px; }
+    .form-section { padding: 56px 20px; }
+}
+
+/* GHL Background Fix */
+.what-section,
+.what-section::before,
+.what-section::after {
+    background: #0a0a0a !important;
+}
+
+body,
+main,
+section {
+    background: #0a0a0a !important;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- JUNETEENTH BANNER -->
+  <div class="juneteenth-banner">
+    <div class="banner-text">Juneteenth 2026 ✦ <span>Financial Freedom Starts Here</span> ✦ June 19th</div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">FREE CREDIT REPAIR GUIDE</div>
+    <div class="nav-badge"><span class="nav-flag">🔴🟡🟢</span> CREDIT REPAIR STARTER GUIDE</div>
+    <a class="nav-cta" href="#grab-guide">GET THE FREE CREDIT GUIDE</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">✦ CREDIT REPAIR STARTS HERE &nbsp;·&nbsp; TAKE THE FIRST STEP TODAY ✦</div>
+    <h1>Your Credit Doesn't Define You.<br>But It Can Impact Your Opportunities.</h1>
+    <p class="hero-sub-headline">Learn the proven steps to review your credit report, identify potential errors, and start building a stronger financial future.</p>
+    <div class="stripe"><div class="stripe-r"></div><div class="stripe-g"></div><div class="stripe-gr"></div></div>
+    <p class="hero-p">
+     Your credit score affects mortgage approvals, auto loans, credit cards, rental applications, and even business funding. Our free Credit Repair Starter Guide shows you how credit works and what actions you can take to improve your financial position.
+    </p>
+    <div class="badges">
+      <div class="badge"><div class="badge-dot bd-red"></div> Free Download</div>
+      <div class="badge"><div class="badge-dot bd-gold"></div> Instant Access</div>
+      <div class="badge"><div class="badge-dot bd-green"></div> No Credit Card Required</div>
+      <div class="badge"><div class="badge-dot bd-red"></div> Easy-to-Follow Steps</div>
+    </div>
+
+    <!-- GUIDE MOCKUP -->
+    <div class="guide-mockup">
+      <div class="mockup-card">
+        <div class="glow-red"></div>
+        <div class="glow-green"></div>
+        <div class="mockup-star">✦</div>
+        <div class="mockup-label">Get Your Free Credit Repair Starter Guide</div>
+        <div class="mockup-title">The Credit Repair Starter Guide</div>
+        <ul class="mockup-items">
+          <li><span class="chk chk-r">✓</span> Understanding your credit report</li>
+          <li><span class="chk chk-g">✓</span> The 5 factors that impact your score</li>
+          <li><span class="chk chk-gr">✓</span> Common credit mistakes to avoid</li>
+          <li><span class="chk chk-r">✓</span> How to dispute inaccurate information</li>
+          <li><span class="chk chk-r">✓</span> Credit-building habits that work</li>
+          <li><span class="chk chk-r">✓</span> Your first 90-day credit improvement plan</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="tri-divider"></div>
+
+  <!-- FORM -->
+  <section class="form-section" id="grab-guide">
+    <div class="form-wrap">
+      <div class="form-headline">Get Your Free Credit Repair Guide 📈</div>
+      <p class="form-sub">Enter your information below to receive your free Credit Repair Starter Guide and learn the first steps toward improving your credit.</p>
+
+      <div id="opt-in-form">
+
+    <div style="
+        background:linear-gradient(135deg,#7a0f1a,#111,#0b4d18);
+        padding:4px;
+        border-radius:16px;
+        max-width:560px;
+        margin:auto;
+        box-shadow:0 20px 60px rgba(0,0,0,.45);
+    ">
+        <div style="background:#fff;padding:10px;border-radius:12px;">
+
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/qt5BbUAHOIHdvQ5SHDRD"
+                style="width:100%;height:525px;border:none;border-radius:8px"
+                id="inline-qt5BbUAHOIHdvQ5SHDRD"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Credit Cleanup Kit Form"
+                data-height="525"
+                data-layout-iframe-id="inline-qt5BbUAHOIHdvQ5SHDRD"
+                data-form-id="qt5BbUAHOIHdvQ5SHDRD"
+                title="Credit Cleanup Kit Form">
+            </iframe>
+
+        </div>
+    </div>
+
+    <p style="color:#888;text-align:center;margin-top:15px;">
+        🔒 Your information is secure. No spam. No pressure.
+    </p>
+
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+</div>
+
+      <div class="success-msg" id="success-msg">
+        <span class="success-icon">🙌🏾</span>
+        <h3>🎁 Your Personal Info Cleanup Guide Is Ready</h3>
+        <p>Your Personal Info Cleanup Guide should begin downloading automatically. While you're here, join the <strong>Keys to Credit community</strong> — real strategies, real wins, and a network of people building real financial freedom together.</p>
+        <h3 style="margin-top:30px;">Book Your Free Consultation</h3>
+
+<iframe src="https://api.leadconnectorhq.com/widget/booking/UDFq1o7KcAxLkilHK9SN"
+style="width:100%;border:none;overflow:hidden;height:500px;"
+scrolling="no"
+id="UDFq1o7KcAxLkilHK9SN_1781794141380"></iframe>
+
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+      </div>
+    </div>
+  </section>
+
+  <div class="tri-divider"></div>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="what-section">
+    <div class="section-label sl-gold">WHAT YOU'LL LEARN</div>
+    <h2 class="section-title">Build Better Credit.<br>Create More Financial Opportunities. ✨</h2>
+    <div class="perks-grid">
+      <div class="perk-card pc-r">
+        <span class="perk-icon">📊</span>
+        <div class="perk-name">Understand Your Credit Score</div>
+        <p class="perk-desc">Learn the 5 factors that impact your credit score and how lenders evaluate your creditworthiness.</p>
+      </div>
+      <div class="perk-card pc-g">
+        <span class="perk-icon">🔍</span>
+        <div class="perk-name">Review Your Credit Report</div>
+        <p class="perk-desc">Discover how to read your credit report and identify potential inaccuracies that may be affecting your score.</p>
+      </div>
+      <div class="perk-card pc-gr">
+        <span class="perk-icon">⚠️</span>
+        <div class="perk-name">Common Credit Mistakes</div>
+        <p class="perk-desc">Avoid the most common credit habits that can lower your score and delay your financial goals.</p>
+      </div>
+      <div class="perk-card pc-r">
+        <span class="perk-icon">📝</span>
+        <div class="perk-name">Dispute Guide</div>
+        <p class="perk-desc">Learn the proper steps for disputing inaccurate information and understanding your consumer rights.</p>
+      </div>
+      <div class="perk-card pc-g">
+        <span class="perk-icon">🚀</span>
+        <div class="perk-name">Credit Building Strategies</div>
+        <p class="perk-desc">Simple actions you can take to establish positive credit habits and strengthen your credit profile.</p>
+      </div>
+      <div class="perk-card pc-gr">
+        <span class="perk-icon">🏆</span>
+        <div class="perk-name">90-Day Improvement Plan</div>
+        <p class="perk-desc">Follow a practical roadmap designed to help you start improving your credit and financial confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tri-divider"></div>
+
+  <!-- PROOF -->
+  <section class="proof-section">
+    <div class="proof-wrap">
+      <div class="section-label sl-gold">CLIENT SUCCESS</div>
+      <h2 class="section-title">People Are Taking Control Of Their Credit. 📈</h2>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p class="proof-text">"I finally understood what was hurting my credit score. The guide made everything simple and helped me create a plan to improve my credit."</p>
+          <div class="proof-name">— Sarah M., Atlanta, GA</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p class="proof-text">"The credit report section alone was worth it. I found items I didn't understand before and learned how to address them properly."</p>
+          <div class="proof-name">— James R., Houston, TX</div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-stars">★★★★★</div>
+          <p class="proof-text">"I thought improving my credit would be complicated. This guide gave me clear steps that I could actually follow."</p>
+          <div class="proof-name">— Monica L., Detroit, MI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tri-divider"></div>
+
+  <!-- FREEDOM CTA -->
+  <section class="freedom-section" id="join-community">
+    <span class="freedom-icon">✊🏾</span>
+    <div class="section-label sl-red">TAKE THE NEXT STEP</div>
+    <h2>Ready To Improve Your Credit?<br><span style="background: linear-gradient(135deg, var(--red-bright), var(--gold-light), var(--green-bright)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Build A Plan Together. ✨</span></h2>
+    <p>Every credit journey is different. If you're ready to understand your credit report, improve your score, and create more financial opportunities, we're here to help.
+
+Schedule a free consultation and learn your next best steps.</p>
+    <a class="community-btn"
+   href="https://api.leadconnectorhq.com/widget/bookings/get-into-credit"
+   target="_blank">
+   BOOK A FREE CONSULTATION →
+</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Get Into Credit | Powered by Key Financial Consulting &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; A division of Infinity Plus Financial</p>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      if (!fname || !email || !phone) {
+        alert('Please fill out all fields to get your free guide.');
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      document.getElementById('opt-in-form').style.display = 'none';
+
+const success = document.getElementById('success-msg');
+success.style.display = 'block';
+success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+setTimeout(() => {
+    window.location.href = "https://assets.cdn.filesafe.space/LHkw8NITPWCl3k6qc6c3/media/6a32fd2ebc828629fa7b9981.docx";
+}, 1500);
+    }
+  </script>
+
+</body>
+</html>
