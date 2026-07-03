@@ -650,26 +650,53 @@ main{
     line-height:1.65;
 }
 
-    .success-msg {
-      display: none;
-      background: linear-gradient(135deg, #1a0306, #060f05);
-      border: 1px solid rgba(201,168,76,0.35);
-      border-radius: 14px;
-      padding: 36px 28px;
-      text-align: center;
+    /* ===== SUCCESS MESSAGE ===== */
 
-      max-width: 1000px;
-      width: 95%;
-      margin: 0 auto;
-    }
-    .success-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
-    .success-msg h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-    .success-msg p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.success-msg{
+    display:none;
+
+    background:linear-gradient(
+        135deg,
+        var(--white) 0%,
+        var(--section) 100%
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:36px 28px;
+
+    text-align:center;
+
+    max-width:1000px;
+    width:95%;
+
+    margin:0 auto;
+
+    box-shadow:var(--shadow-lg);
+}
+
+.success-icon{
+    font-size:2.6rem;
+    color:var(--primary);
+    margin-bottom:14px;
+    display:block;
+}
+
+.success-msg h3{
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:10px;
+}
+
+.success-msg p{
+    font-size:.9rem;
+    color:var(--text-light);
+    line-height:1.7;
+}
     .community-btn-outline {
       display: inline-block;
       padding: 13px 30px;
