@@ -141,36 +141,45 @@ body{
   position: relative;
   overflow: hidden;
 }
-    .juneteenth-banner::before {
-      content: '✦ ✦ ✦';
-      position: absolute;
-      left: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--gold);
-      font-size: 0.7rem;
-      letter-spacing: 4px;
-      opacity: 0.6;
-    }
-    .juneteenth-banner::after {
-      content: '✦ ✦ ✦';
-      position: absolute;
-      right: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--gold);
-      font-size: 0.7rem;
-      letter-spacing: 4px;
-      opacity: 0.6;
-    }
-    .banner-text {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-    }
-    .banner-text span { color: var(--cream); opacity: 0.85; font-weight: 400; }
+    /* Decorative Icons */
+
+.juneteenth-banner::before{
+    content:"✦ ✦ ✦";
+    position:absolute;
+    left:24px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--gold);
+    font-size:.7rem;
+    letter-spacing:4px;
+    opacity:.6;
+}
+
+.juneteenth-banner::after{
+    content:"✦ ✦ ✦";
+    position:absolute;
+    right:24px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--gold);
+    font-size:.7rem;
+    letter-spacing:4px;
+    opacity:.6;
+}
+
+.banner-text{
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--gold);
+}
+
+.banner-text span{
+    color:var(--white);
+    opacity:.9;
+    font-weight:500;
+}
 
     /* ── HERO ── */
     .hero {
